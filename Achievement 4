@@ -1,19 +1,38 @@
-print("Welcome to the unit calculator\n")
+def temperature_conversion(unit, temperature ):
+    if unit.upper() == "F":
+        return "C",(temperature - 32.0) * (5.0/9.0)
+    elif unit.upper() == "C":
+        return "F",(temperature * (9.0/5.0)) + 32.0
+    else:
+        print("Please Type F and c for Farenheit and celcius")
 
-print("Select the unit to want to convert into\n")
-print("1) Temperature")
-print("2) Speed")
+def Speed_conversion(unit1, speed ):
+    if unit1.upper() == "MPH":
+        return "KMP",(speed * 1.60)
+    elif unit1.upper() == "KMP":
+        return "MPH",(speed * 0.62)
+    else:
+        print("Please Type MPH and KMP for Meter Per Hour and Kilometer Per Hour")
 
-C =  float(input("Enter the unit you want to convert"))
-F = ((5.0/9.0) * (C - 32.0))
+print('                     Unit Converter                     \n')
+print("                     1.Temperature Conversion")
+print("                     2. Speed Conversion\n")
 
-choice = int(input("Enter Your Choice"))
-    
-if choice == 1:
-    print("1. Celcius to Farenheit")
-    print("2. Farenheit to Celcius")
-    
-    choice2 = int(input("Enter Your Choice\n"))
-    
-    if choice2 == 1:
-        print("Your temperatur in Farenheit is:" +F)
+choice_first = int(input("                    -------Select the option you want to convert the units-------------"))
+
+if choice_first == 1:
+    unit = input("Select unit for temperature from 'F' or 'C")
+    temperature = float(input("Enter the temerature you want to convert"))
+    u, t = temperature_conversion(unit.strip(), temperature)
+    print()
+    print(temperature, "Degrees", unit.upper(), "is", t, "degrees", u)
+
+elif choice_first == 2:
+    unit1 = input("Select unit for temperature from 'MPH' or 'KPH")
+    speed = float(input("Enter the speed you want to convert"))
+    u1, s = Speed_conversion(unit1.strip(), speed)
+    print()
+    print(speed, "Degrees", unit1.upper(), "is", s,u1)
+
+else:
+    print("Enter a valid option")

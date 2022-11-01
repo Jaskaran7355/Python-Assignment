@@ -1,0 +1,19 @@
+print("Welcome to the unit calculator\n")
+
+print("Select the unit to want to convert into\n")
+print("1) Temperature")
+print("2) Speed")
+
+C =  float(input("Enter the unit you want to convert"))
+F = ((5.0/9.0) * (C - 32.0))
+
+choice = int(input("Enter Your Choice"))
+    
+if choice == 1:
+    print("1. Celcius to Farenheit")
+    print("2. Farenheit to Celcius")
+    
+    choice2 = int(input("Enter Your Choice\n"))
+    
+    if choice2 == 1:
+        print("Your temperatur in Farenheit is:" +F)
